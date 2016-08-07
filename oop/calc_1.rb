@@ -32,29 +32,54 @@ class SimpleCalculator
 
 end
 
-class FancyCalculator
-
-  def add(first_number, second_number)
-    first_number + second_number
-  end
-
-  def subtract(first_number, second_number)
-    first_number - second_number
-  end
-
-  def multiply(first_number, second_number)
-    first_number * second_number
-  end
-
-  def divide(first_number, second_number)
-    first_number / second_number
-  end
-
-  def square_root(number)
+class FancyCalculator < SimpleCalculator
+def square_root(number)
     Math.sqrt(number)
   end
 
 end
 
 # Write your own driver code below:
+first_number = 9
+second_number = 5
+fancycalc = FancyCalculator.new()
+result = fancycalc.add(first_number,second_number)
+puts "Your method returned #{result}"
+if result == 14
+  puts "PASS"
+else 
+  puts "f"
+end
+
+result = fancycalc.subtract(first_number,second_number)
+puts "Your method returned #{result}"
+if result == 4
+  puts "PASS"
+else 
+  puts "f"
+end
+
+result = fancycalc.multiply(first_number,second_number)
+puts "Your method returned #{result}"
+if result == 45
+  puts "PASS"
+else 
+  puts "f"
+end
+
+result = fancycalc.divide(first_number,second_number)
+puts "Your method returned #{result}"
+if result == 1
+  puts "PASS"
+else 
+  puts "f"
+end
+
+result = fancycalc.square_root(first_number)
+puts "Your method returned #{result}"
+if result == 3
+  puts "PASS"
+else 
+  puts "f"
+end
 

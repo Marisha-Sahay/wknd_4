@@ -24,52 +24,13 @@ class SimpleCalculator
 
 end
 
-class FancyCalculator
-
-  def add(first_number, second_number)
-    first_number + second_number
-  end
-
-  def subtract(first_number, second_number)
-    first_number - second_number
-  end
-
-  def multiply(first_number, second_number)
-    first_number * second_number
-  end
-
-  def divide(first_number, second_number)
-    first_number / second_number
-  end
-
+class FancyCalculator < SimpleCalculator
   def square_root(number)
     Math.sqrt(number)
   end
-
 end
 
-class WhizBangCalculator
-
-  def add(first_number, second_number)
-    first_number + second_number
-  end
-
-  def subtract(first_number, second_number)
-    first_number - second_number
-  end
-
-  def multiply(first_number, second_number)
-    first_number * second_number
-  end
-
-  def divide(first_number, second_number)
-    first_number / second_number
-  end
-
-  def square_root(number)
-    Math.sqrt(number)
-  end
-
+class WhizBangCalculator < FancyCalculator
   def hypotenuse(first_number, second_number)
     Math.hypot(first_number, second_number)
   end
@@ -83,4 +44,62 @@ class WhizBangCalculator
 end
 
 # Copy your driver code from the previous exercise and more below:
+first_number = 9
+second_number = 5
+calc = WhizBangCalculator.new()
 
+result = calc.add(first_number,second_number)
+puts "Your method returned #{result}"
+if result == 14
+  puts "PASS"
+else 
+  puts "f"
+end
+
+result = calc.subtract(first_number,second_number)
+puts "Your method returned #{result}"
+if result == 4
+  puts "PASS"
+else 
+  puts "f"
+end
+
+result = calc.multiply(first_number,second_number)
+puts "Your method returned #{result}"
+if result == 45
+  puts "PASS"
+else 
+  puts "f"
+end
+
+result = calc.divide(first_number,second_number)
+puts "Your method returned #{result}"
+if result == 1
+  puts "PASS"
+else 
+  puts "f"
+end
+
+result = calc.square_root(first_number)
+puts "Your method returned #{result}"
+if result == 3
+  puts "PASS"
+else 
+  puts "f"
+end
+
+result = calc.hypotenuse(first_number,second_number).round(3)
+puts "Your method returned #{result}"
+if result == 10.296
+  puts "PASS"
+else 
+  puts "f"
+end
+
+result = calc.exponent(first_number,3)
+puts "Your method returned #{result}"
+if result == 729
+  puts "PASS"
+else 
+  puts "f"
+end
